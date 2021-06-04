@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Copyright (c) 2021   Lumi Miettinen <luminaula@gmail.com>
+# LICENSE: MIT, see LICENSE on:
+# https://github.com/luminaula/synti
+
 import sys
 import socket
 
@@ -15,7 +19,7 @@ sock.settimeout(timeout)
 try:
     sock.connect((dest_ip, dest_port))
 except:
-    print("Connection refused", file=sys.stderr)
+    print("Connection failed", file=sys.stderr)
     retval = 1
 
 print(sock.getsockname()[1])
